@@ -1,0 +1,40 @@
+<pre class='metadata'>
+Title: CSS Media Expressions
+Shortname: media-expressions
+Level: 1
+Status: DREAM
+URL: https://github.com/jonathantneal/media-expressions-spec
+Editor: Jonathan Neal, jonathantneal@hotmail.com
+Abstract: The goal of this document is to specify a syntax for media queries within values in CSS.
+</pre>
+
+<h2 id=introduction>Introduction</h2>
+
+In CSS, declarations may only be given responsive values by declaring new <a href=https://drafts.csswg.org/mediaqueries/><code>@media</code></a> at-rules with duplicated selectors and declarations.
+This module introduces a more efficient way of representing responsive values.
+
+<h2 id=syntax>Media Expressions Syntax</h2>
+
+The syntax of a <a>media()</a> function is:
+
+<pre>
+	<dfn dfn-type=function>media()</dfn> = media( <a>&lt;media-value&gt;</a> [, <a>&lt;media-value&gt;</a>]? )
+
+	<dfn dfn-type=type>&lt;media-value&gt;</dfn> = [ <dfn dfn-type=type>&lt;media-condition&gt;</dfn> ]?, <dfn dfn-type=type>&lt;css-value&gt;</dfn>
+</pre>
+
+To learn more about <a>&lt;media-condition&gt;</a> see <a href=https://www.w3.org/TR/mediaqueries-4/#typedef-media-condition>Media Queries</a>.
+
+To learn more about <a>&lt;css-value&gt;</a> see <a href=https://www.w3.org/TR/css-values/#value-defs>CSS Values and Units Module</a>.
+
+<div class=example>
+	<pre class=language-css>
+	body {
+		font-size: media(
+			16px,
+			(min-width:  600px) 18px,
+			(min-width: 1000px) 20px
+		);
+	}
+	</pre>
+</div>
