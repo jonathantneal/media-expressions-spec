@@ -10,7 +10,6 @@
   "bugs": "https://github.com/jonathantneal/media-expressions-spec/issues",
   "main": "index.js",
   "files": [
-    "index.js",
     "index.html"
   ],
   "scripts": {
@@ -18,7 +17,7 @@
     "test": "echint"
   },
   "engines": {
-    "node": ">=6.9.1"
+    "node": ">=6.5.0"
   },
   "devDependencies": {
     "echint": "^2.1.1",
